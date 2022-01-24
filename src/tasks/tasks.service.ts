@@ -46,20 +46,9 @@ export class TasksService {
     return found;
   }
 
-  // public createTask(createTaskDto: CreateTaskDto): Task {
-  //   const { title, description } = createTaskDto;
-
-  //   const task: Task = {
-  //     id: uuid(),
-  //     title,
-  //     description,
-  //     status: TaskStatus.OPEN, // Default
-  //   };
-
-  //   this.tasks.push(task);
-
-  //   return task;
-  // }
+  public createTask(createTaskDto: CreateTaskDto): Promise<Task> {
+    return this.tasksRepository.createTask(createTaskDto);
+  }
 
   // public deleteTask(id: string): void {
   //   this.getTaskById(id); // Runs validation
